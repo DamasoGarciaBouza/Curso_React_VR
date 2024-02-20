@@ -7,18 +7,33 @@ export const FormularioComponent = () => {
     const conseguirDatosFormulario = e => {
         e.preventDefault();
 
-        const [nombre, apellidos, sexo, bio] = e.target;
+        const [nombre, apellidos, sexo, bio, enviar] = e.target;
 
         let usuario = {
             nombre: nombre.value,
             apellidos: apellidos.value,
             sexo: sexo.value,
-            bio: bio.value
+            bio: bio.value,
+            enviar: enviar.value
         }
 
         console.log(usuario);
 
         setUsuario(usuario);
+    }
+
+    const cambiarDatos = e => {
+        let name_del_input = (e.target.name);
+        let usuario_para_modificar = usuario;
+
+        //usuario_para_modificar[name_del_input] = e.target.value;
+
+        setUsuario(estado_previo => 
+            ({
+                ...estado_previo, [name_del_input]: e.target.value
+            })
+        );
+
     }
 
     return (
@@ -34,15 +49,17 @@ export const FormularioComponent = () => {
             }
 
             <form onSubmit={conseguirDatosFormulario}>
-                <input type='text' name='nombre' placeholder='Nombre' />
-                <input type='text' name='apellido' placeholder='Apellido' />
-                <select name='sexo'>
+                <input type='text' name='nombre' placeholder='Nombre' 
+                onChange={cambiarDatos}/>
+                <input type='text' name='apellido' placeholder='Apellido' 
+                onChange={cambiarDatos}/>
+                <select name='sexo' onChange={cambiarDatos}>
                     <option value="hombre">Hombre</option>
                     <option value="mujer">Mujer</option>
                 </select>
-                <textarea name='bio' placeholder='Biografía'></textarea>
+                <textarea name='bio' placeholder='Biografía' onChange={cambiarDatos}></textarea>
                 <br></br>
-                <input type='submit' value="Enviar" />
+                <input type='submit' value="Enviar" name='enviar'/>
             </form>
         </div>
     )
