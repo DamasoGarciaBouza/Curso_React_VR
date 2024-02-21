@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 
 export const Crear = () => {
 
@@ -28,29 +29,7 @@ export const Crear = () => {
     console.log(movie);
 
     //Guardar en almacenamiento local (tiene que ser numero o string, no un array directamente)
-
-    saveInLocalStorage(movie);
-
-  }
-
-  const saveInLocalStorage = movie => {
-    //Conseguir elementos ya guardados en local storage
-    let elements = JSON.parse(localStorage.getItem('movies'));
-
-    console.log(elements);
-
-    //Comprobar si es un array
-    if (Array.isArray(elements)) {
-      elements.push(movie);
-    } else {
-      elements = [movie];
-    }
-
-    console.log(elements);
-
-    //Guardar en local storage
-
-    localStorage.setItem('movies', JSON.stringify(elements));
+    GuardarEnStorage("movies", movie);
   }
 
   return (
