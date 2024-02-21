@@ -1,4 +1,7 @@
 import './App.css';
+import { Buscador } from './components/Buscador';
+import { Crear } from './components/Crear';
+import { Listado } from './components/Listado';
 
 function App() {
   return (
@@ -19,48 +22,12 @@ function App() {
       </nav>
 
       <section className="content">
-        <article className="peli-item">
-          <h3 className="title">Batman</h3>
-          <p className="description">A bat hero</p>
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
-        <article className="peli-item">
-          <h3 className="title">Batman</h3>
-          <p className="description">A bat hero</p>
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
-        <article className="peli-item">
-          <h3 className="title">Batman</h3>
-          <p className="description">A bat hero</p>
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
-        <article className="peli-item">
-          <h3 className="title">Batman</h3>
-          <p className="description">A bat hero</p>
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
+        <Listado/>
       </section>
 
       <aside className="lateral">
-        <div className="search">
-          <h3 className="title">Buscador</h3>
-          <form>
-            <input type="text" />
-            <button>Buscar</button>
-          </form>
-        </div>
-        <div className="add">
-          <h3 className="title">Añadir película </h3>
-          <form>
-            <input type="text" placeholder="Titulo" />
-            <input type="textarea" placeholder="Descripción" />
-            <input type="submit" value="Guardar" />
-          </form>
-        </div>
+        <Buscador/>
+        <Crear/>
       </aside>
 
       <footer className="footer">

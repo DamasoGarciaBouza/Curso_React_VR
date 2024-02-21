@@ -76,6 +76,10 @@ nav li a:hover {
     flex-grow: 1;
 }
 
+.edit, .delete {
+    margin: 10px;
+}
+
 .peli-item .edit:hover {
     background-color: rgb(215, 131, 7);
 }
