@@ -4,7 +4,7 @@ export const Crear = () => {
 
   const componentTitle = "Añadir película";
 
-  const [ movieState, setMovieState ] = useState({
+  const [movieState, setMovieState] = useState({
     title: '',
     description: ''
   });
@@ -27,13 +27,37 @@ export const Crear = () => {
     setMovieState(movie);
     console.log(movie);
 
+    //Guardar en almacenamiento local (tiene que ser numero o string, no un array directamente)
+
+    saveInLocalStorage(movie);
+
+  }
+
+  const saveInLocalStorage = movie => {
+    //Conseguir elementos ya guardados en local storage
+    let elements = JSON.parse(localStorage.getItem('movies'));
+
+    console.log(elements);
+
+    //Comprobar si es un array
+    if (Array.isArray(elements)) {
+      elements.push(movie);
+    } else {
+      elements = [movie];
+    }
+
+    console.log(elements);
+
+    //Guardar en local storage
+
+    localStorage.setItem('movies', JSON.stringify(elements));
   }
 
   return (
     <div className="add">
       <h3 className="title">{componentTitle}</h3>
       <strong>
-      {(title && description) && "Has creado la pelicula:" + movieState.title}
+        {(title && description) && "Has creado la pelicula:" + movieState.title}
       </strong>
       <form onSubmit={getFormData}>
         <input type="text" id='title' name='title' placeholder="Titulo" />
