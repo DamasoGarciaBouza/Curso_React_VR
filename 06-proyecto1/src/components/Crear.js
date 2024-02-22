@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 
-export const Crear = () => {
+export const Crear = ({ setListState }) => {
 
   const componentTitle = "Añadir película";
 
@@ -15,21 +15,32 @@ export const Crear = () => {
   const getFormData = e => {
     e.preventDefault();
 
+    //Conseguir datos del formulario
     let target = e.target;
     let title = target.title.value;
     let description = target.description.value;
 
+    //Crear objeto de pelicula a guardar
     let movie = {
       id: new Date().getTime(),
       title,
       description
     };
 
+    //Guardar estado
     setMovieState(movie);
     console.log(movie);
 
+    //Actualizar el estado del listado principal
+    setListState(elements => {
+      return [...elements, movie];
+    })
+
+
     //Guardar en almacenamiento local (tiene que ser numero o string, no un array directamente)
     GuardarEnStorage("movies", movie);
+
+
   }
 
   return (

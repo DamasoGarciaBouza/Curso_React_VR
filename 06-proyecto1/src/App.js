@@ -2,8 +2,12 @@ import './App.css';
 import { Buscador } from './components/Buscador';
 import { Crear } from './components/Crear';
 import { Listado } from './components/Listado';
+import { useState } from 'react';
 
 function App() {
+
+  const [listState, setListState] = useState([]);
+
   return (
 
     <div className="layout">
@@ -22,12 +26,12 @@ function App() {
       </nav>
 
       <section className="content">
-        <Listado/>
+        <Listado listState={listState} setListState={setListState}/>
       </section>
 
       <aside className="lateral">
         <Buscador/>
-        <Crear/>
+        <Crear setListState={setListState}/>
       </aside>
 
       <footer className="footer">

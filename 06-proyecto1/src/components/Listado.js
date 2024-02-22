@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
-export const Listado = () => {
+export const Listado = ({listState, setListState}) => {
 
-    const [listState, setListState] = useState([]);
-
-    useEffect(() => {
-        console.log("Componente del listado de peliculas cargado!");
-        getMovies();
-    }, []);
+    //const [listState, setListState] = useState([]);
 
     const getMovies = () => {
         let movies = JSON.parse(localStorage.getItem("movies"));
         console.log(movies);
         setListState(movies);
     }
+
+    useEffect(() => {
+        console.log("Componente del listado de peliculas cargado!");
+        getMovies();
+    }, []);
+
+
 
     return (
         <>
