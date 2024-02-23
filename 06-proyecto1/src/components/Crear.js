@@ -32,8 +32,15 @@ export const Crear = ({ setListState }) => {
     console.log(movie);
 
     //Actualizar el estado del listado principal
+
+
     setListState(elements => {
-      return [...elements, movie];
+      if (elements == null) {
+        return [movie];
+      }
+      else {
+        return [...elements, movie]
+      }
     })
 
 

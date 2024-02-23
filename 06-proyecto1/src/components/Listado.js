@@ -8,6 +8,7 @@ export const Listado = ({listState, setListState}) => {
         let movies = JSON.parse(localStorage.getItem("movies"));
         console.log(movies);
         setListState(movies);
+        return movies;
     }
 
     useEffect(() => {
@@ -15,7 +16,16 @@ export const Listado = ({listState, setListState}) => {
         getMovies();
     }, []);
 
+    const deleteMovie = (id) => {
+        let stored_movies = getMovies();
 
+        let new_movie_array = stored_movies.filter( movie => movie.id !== parseInt(id));
+
+        setListState(new_movie_array);
+
+
+        localStorage.setItem('movies', JSON.stringify(new_movie_array));
+    }
 
     return (
         <>
@@ -27,7 +37,7 @@ export const Listado = ({listState, setListState}) => {
                             <h3 className="title">{movie.title}</h3>
                             <p className="description">{movie.description}</p>
                             <button className="edit">Editar</button>
-                            <button className="delete">Borrar</button>
+                            <button className="delete" onClick={ () => deleteMovie(movie.id)}>Borrar</button>
                         </article>
                     )
 
