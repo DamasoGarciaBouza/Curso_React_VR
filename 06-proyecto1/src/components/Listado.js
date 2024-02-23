@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Editar } from './Editar';
 
-export const Listado = ({listState, setListState}) => {
+export const Listado = ({ listState, setListState }) => {
 
     //const [listState, setListState] = useState([]);
+
+    const [editar, setEditar] = useState(0);
 
     const getMovies = () => {
         let movies = JSON.parse(localStorage.getItem("movies"));
@@ -19,7 +22,7 @@ export const Listado = ({listState, setListState}) => {
     const deleteMovie = (id) => {
         let stored_movies = getMovies();
 
-        let new_movie_array = stored_movies.filter( movie => movie.id !== parseInt(id));
+        let new_movie_array = stored_movies.filter(movie => movie.id !== parseInt(id));
 
         setListState(new_movie_array);
 
@@ -29,15 +32,21 @@ export const Listado = ({listState, setListState}) => {
 
     return (
         <>
-            {listState != null ?
-                listState.map(movie => {
 
+            {(listState != null ) ?
+
+                listState.map(movie => {
+                    
                     return (
                         <article key={movie.id} className="peli-item">
                             <h3 className="title">{movie.title}</h3>
                             <p className="description">{movie.description}</p>
-                            <button className="edit">Editar</button>
-                            <button className="delete" onClick={ () => deleteMovie(movie.id)}>Borrar</button>
+                            <button className="edit" onClick={()=> setEditar(movie.id)}>Editar</button>
+                            <button className="delete" onClick={() => deleteMovie(movie.id)}>Borrar</button>
+                            {/*aparece formulario para editar*/}
+                            {editar === movie.id && (
+                                <Editar/>
+                            )}
                         </article>
                     )
 
