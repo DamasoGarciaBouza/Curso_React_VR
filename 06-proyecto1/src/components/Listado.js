@@ -33,19 +33,22 @@ export const Listado = ({ listState, setListState }) => {
     return (
         <>
 
-            {(listState != null ) ?
+            {(listState != null) ?
 
                 listState.map(movie => {
-                    
+
                     return (
                         <article key={movie.id} className="peli-item">
                             <h3 className="title">{movie.title}</h3>
                             <p className="description">{movie.description}</p>
-                            <button className="edit" onClick={()=> setEditar(movie.id)}>Editar</button>
+                            <button className="edit" onClick={() => setEditar(movie.id)}>Editar</button>
                             <button className="delete" onClick={() => deleteMovie(movie.id)}>Borrar</button>
                             {/*aparece formulario para editar*/}
                             {editar === movie.id && (
-                                <Editar/>
+                                <Editar movie={movie} 
+                                getMovies={getMovies} 
+                                setEditar={setEditar} 
+                                setListState={setListState} />
                             )}
                         </article>
                     )
