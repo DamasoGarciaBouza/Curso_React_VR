@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.activado {
+  border: 1px dotted black;
+  background-color: rgb(219, 245, 195);
+}
