@@ -6,6 +6,7 @@ export const Buscador = ({ listState, setListState }) => {
     // Solución: llamamos a "searchMovie" con use effect
 
     const [search, setSearchState] = useState('');
+    const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
         searchMovie()
@@ -25,14 +26,11 @@ export const Buscador = ({ listState, setListState }) => {
             return movie.title.toLowerCase().includes(search.toLowerCase());
         })
 
-        if (search.length < 1) {
-            console.log("Not enough chars");
+        if (search.length < 1 || found_movies === 0) {
             found_movies = JSON.parse(localStorage.getItem("movies"));
-        }
-
-        if (found_movies == 0) {
-            console.log("No movies found");            
-            found_movies = JSON.parse(localStorage.getItem("movies"));
+            setNotFound(true);
+        } else {
+            setNotFound(false);
         }
 
         // Actualizar estado del listado principal con lo que he logrado filtar
@@ -43,6 +41,8 @@ export const Buscador = ({ listState, setListState }) => {
     return (
         <div className="search">
             <h3 className="title">Buscador: {search}</h3>
+            {(notFound && search.length > 0) &&
+                (<span className='not-found'>Sin coincidencias</span>)}
             <form>
                 <input type="text"
                     id='search_field'

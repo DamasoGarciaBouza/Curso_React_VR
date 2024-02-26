@@ -162,3 +162,7 @@ input[type="textarea"], textarea {
     min-width: 12em;
     max-width: 12em;
 }
+
+.not-found {
+    color: red;
+}
