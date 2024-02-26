@@ -30,7 +30,7 @@ function App() {
       </section>
 
       <aside className="lateral">
-        <Buscador/>
+        <Buscador listState={listState} setListState={setListState}/>
         <Crear setListState={setListState}/>
       </aside>
 
