@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 export const Persona = () => {
 
-
     //valores por defecto en parametros opcionales
     //let {nombre = "Fulano", apellido = "Fulanez"} = useParams();
 
@@ -23,8 +22,6 @@ export const Persona = () => {
             navegar(url);
         }
     }
-
-    let params = useParams();
 
     return (
         <div>
