@@ -5,9 +5,9 @@ import { Curriculum } from './components/Curriculum';
 
 function App() {
   return (
-  <>
+  <div className='layout'>
   <MisRutas/>
-  </>
+  </div>
   );
 }
 

@@ -11,3 +11,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.layout {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  border-bottom: 2px solid black;
+  margin-bottom: 25px;
+}
+
+.header .logo {
+  min-height: 8em;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header .logo h2 {
+  display: block;
+  width: 6em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.header .nav {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.header .nav ul {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+
+  align-items: center;
+}
+
+.header .nav ul li {
+  list-style-type: none;
+  margin-right: 2em;
+}
+
+.header .nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+}
+
+.header .nav ul li a:hover {
+  color: #0655ae;
+  text-decoration: underline;
+}
+
+.content {
+  min-height: 460px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 35px;
+  padding-top: 35px;
+  border-top: 3px solid black;
+  color: #444;
+}

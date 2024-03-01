@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <footer>
-        Portfolio &copy; 2024
+    <footer className='footer'>
+        My React Portfolio &copy; 2024
     </footer>
   )
 }
