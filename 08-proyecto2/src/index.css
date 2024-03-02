@@ -46,13 +46,12 @@ code {
   flex: 1 1 auto;
   display: flex;
   justify-content: flex-end;
-
-  align-items: center;
+  align-items: flex-end;
 }
 
 .header .nav ul li {
   list-style-type: none;
-  margin-right: 2em;
+  margin-right: 1em;
 }
 
 .header .nav ul li a {
@@ -60,11 +59,21 @@ code {
   text-transform: uppercase;
   font-weight: bold;
   color: black;
+  padding: 1em;
+  border-radius: 13px 13px 1px 1px;
+  min-width: 7em;
+  display: block;
+  text-align: center;
 }
 
 .header .nav ul li a:hover {
-  color: #0655ae;
   text-decoration: underline;
+}
+
+.active {
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
 .content {
@@ -79,3 +88,4 @@ code {
   border-top: 3px solid black;
   color: #444;
 }
+

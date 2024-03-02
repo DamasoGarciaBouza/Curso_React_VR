@@ -2,6 +2,8 @@ import React from 'react'
 
 export const Servicios = () => {
   return (
-    <div>Servicios</div>
+    <div className='page'>
+      <h2>Servicios</h2>
+    </div>
   )
 }
