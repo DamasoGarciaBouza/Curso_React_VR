@@ -89,3 +89,32 @@ code {
   color: #444;
 }
 
+
+
+.works {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work-item {
+  flex-basis: 25%;
+  text-align: center;
+  margin: 30px;
+  box-shadow: 0px 5px 5px gray;
+}
+
+.work-item .mask  {
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.work-item .mask img  {
+  width: 90%;
+}
+
+.work-item .mask:hover img {
+  width: 100%;
+  transition: all 500ms;
+}
