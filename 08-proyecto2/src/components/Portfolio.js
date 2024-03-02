@@ -12,7 +12,7 @@ export const Portfolio = () => {
           trabajos.map(trabajo => {
             return (
               <article className='work-item' key={trabajo.id}>
-                <h4><Link to={"/proyecto/" + trabajo.id}>{trabajo.nombre}</Link></h4>
+                <h4><Link to={"/trabajo/" + trabajo.id}>{trabajo.nombre}</Link></h4>
                 <div className='mask'>
                   <img src={"/images/" + trabajo.id + ".png"} />{/*No ponemos la carpeta public en la ruta */}
                 </div>

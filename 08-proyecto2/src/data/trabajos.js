@@ -1,22 +1,26 @@
 export const trabajos = [
     {
-        'id': 'proy1',
-        'nombre': 'Proyecto 1',
-        'web': 'www.proyecto1.com'
+        'id': 't1',
+        'nombre': 'Mi Nueva Red social',
+        'web': 'www.minuevaredsocial.com',
+        'descripcion': 'Red social muy popular'
     },
     {
-        'id': 'proy2',
-        'nombre': 'Proyecto 2',
-        'web': 'www.proyecto2.com'
+        'id': 't2',
+        'nombre': 'App cálculo',
+        'web': 'www.appcalculo.com',
+        'descripcion': 'App muy exacta'
     },
     {
-        'id': 'proy3',
-        'nombre': 'Proyecto 3',
-        'web': 'www.proyecto3.com'
+        'id': 't3',
+        'nombre': 'App historia',
+        'web': 'www.apphistoria.com',
+        'descripcion': 'App muy entretenida'
     },
     {
-        'id': 'proy4',
-        'nombre': 'Proyecto 4',
-        'web': 'www.proyecto4.com'
-    }        
+        'id': 't4',
+        'nombre': 'App geográfica',
+        'web': 'www.appgeografica.com',
+        'descripcion': 'App muy bonita'
+    },           
 ]
