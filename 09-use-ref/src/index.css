@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#miCaja {
+  border: 3px solid rgb(227, 115, 23);
+  padding: 2em;
+}
+
+.green {
+  background-color: green;
+}
