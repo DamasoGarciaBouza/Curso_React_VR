@@ -1,4 +1,5 @@
 import './App.css';
+import { Ejemplo } from './Components/Ejemplo';
 import { Formulario } from './Components/Formulario';
 
 function App() {
@@ -7,6 +8,8 @@ function App() {
       <header className="App-header">
 
         <Formulario />
+        
+        <Ejemplo />
 
       </header>
     </div>

@@ -19,7 +19,7 @@ export const Formulario = () => {
         // destructuracion para acceder directamente a current de miCaja
         let { current: caja} = miCaja;
         caja.classList.add("green");
-        caja.innerHTML = "Formulario enviado";
+        caja.innerHTML = "<h2>Formulario enviado</h2>";
 
 
     }
